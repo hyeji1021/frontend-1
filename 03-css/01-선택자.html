@@ -10,7 +10,7 @@
     <h2>선택자</h2>
 
     <!-- 심플 선택자 -->
-    <h1 id="logo" class="logo">logo</h1>
+    <h1 id="logo" class="logo just">logo</h1>
     <style>
       h1 {
         color: red;
@@ -27,6 +27,86 @@
       #logo.logo {
         color: pink;
       }
+      .logo.just {
+        color: purple;
+      }
     </style>
+    <!-- 자손 선택기 : 공백 -->
+    <div class="selector1">
+      <p class="child-g child">자식</p>
+      <p class="child-g child">자식</p>
+      <section><p class="child-g grandchild">손자</p></section>
+    </div>
+    /.selector1
+    <style>
+      .selector1 .child-g {
+        color: red;
+      }
+      .selector1 .child-g {
+        color: blue;
+      }
+      .selector1 .child-g {
+        color: green;
+      }
+    </style>
+    <hr />
+
+    <!-- 인접 형제 선택기(+) -->
+    <input type="checkbox" id="term1" />
+    <label for="term1">이용약관</label>
+    <br />
+    <input type="checkbox" id="term2" name="term2" />
+    <label for="term2">개인정보처리방침</label>
+    <style>
+      input:checked + label {
+        color: red;
+      }
+    </style>
+
+    <!-- /* 상태 선택기(:상태값) */ -->
+    <a href="#" class="btn">버튼</a>
+    <style>
+      .btn {
+        display: block;
+        width: 50px;
+        height: 30px;
+        background-color: blue;
+        color: #fff;
+      }
+      .btn:hover {
+        background-color: red;
+      }
+    </style>
+
+    <!-- 가상클래스 -->
+    <ul class="nav1">
+      <li>menu1 <span> : </span></li>
+      <li>menu2 <span> : </span></li>
+      <li>menu3 <span> : </span></li>
+      <li>menu4 <span> : </span></li>
+    </ul>
+    <style>
+      .nav1 li:first-child {
+        color: blue;
+      }
+      .nav1 li:last-child {
+        color: red;
+      }
+      .nav1 {
+        display: flex;
+        list-style: none;
+      }
+    </style>
+
+    <hr />
+    <input type="text" class="inp-search" placeholder="나를 클릭하세요." />
+    <style>
+      .inp-search {
+        height: 50px;
+        padding: 0 20px;
+        border: 3px solid #777;
+      }
+    </style>
+    <div></div>
   </body>
 </html>
