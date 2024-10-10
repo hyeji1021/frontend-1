@@ -1,0 +1,2 @@
+const data = require("/Users/hj_j/Desktop/front/120");
+const data = require("/Users/hj_j/Desktop/front/data.json");

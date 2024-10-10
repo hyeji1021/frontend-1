@@ -4,6 +4,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>선택자 : css</title>
+    <link
+      rel="stylesheet"
+      href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css"
+    />
+    /> "
   </head>
   <body>
     <h1>css</h1>
@@ -53,13 +58,23 @@
 
     <!-- 인접 형제 선택기(+) -->
     <input type="checkbox" id="term1" />
-    <label for="term1">이용약관</label>
+    <label for="term1" class="label">이용약관</label>
     <br />
     <input type="checkbox" id="term2" name="term2" />
-    <label for="term2">개인정보처리방침</label>
+    <label for="term2" class="label">개인정보처리방침</label>
     <style>
-      input:checked + label {
+      .label::before {
+        content: "";
+        display: inline-block;
+        width: 30px;
+        height: 30px;
+        border: 1px;
+      }
+      input:checked + .label {
         color: red;
+      }
+      input:checked + .label::before {
+        background-color: blue;
       }
     </style>
 
@@ -80,10 +95,10 @@
 
     <!-- 가상클래스 -->
     <ul class="nav1">
-      <li>menu1 <span> : </span></li>
-      <li>menu2 <span> : </span></li>
-      <li>menu3 <span> : </span></li>
-      <li>menu4 <span> : </span></li>
+      <li>menu1</li>
+      <li>menu2</li>
+      <li>menu3</li>
+      <li>menu4</li>
     </ul>
     <style>
       .nav1 li:first-child {
@@ -111,6 +126,73 @@
         background: #777;
       }
     </style>
-    <div></div>
+
+    <!-- 가상 선택자 : before, ::after -->
+    <ul class="list2">
+      <li>menu1</li>
+      <li>menu2</li>
+      <li>menu3</li>
+      <li>menu4</li>
+    </ul>
+    /.list2
+    <style>
+      .list2 {
+        list-style: none;
+      }
+      .list2::before {
+        content: "ul 앞에 내용";
+        color: red;
+      }
+      .list2:after {
+        content: "ul 뒤에 내용";
+        color: blue;
+      }
+
+      .list2 li::before {
+        content: "";
+        display: inline-block;
+        width: 10px;
+        height: 10px;
+        margin-right: 10px;
+        background-color: purple;
+      }
+      .list2 li::after {
+        content: "li 뒤에 내용";
+        font-family: "Line Awesome Free";
+        font-weight: 900;
+        content: "\f700";
+      }
+    </style>
+    <ul class="list3">
+      <li>menu1</li>
+      <li>menu2</li>
+      <li>menu3</li>
+    </ul>
+    /.list3
+    <style>
+      .list3 {
+        list-style: none;
+      }
+      .list3 li:before {
+        content: "";
+        content: "li 앞에 내용";
+        font-family: "Line Awesome Free";
+        font-weight: 900;
+        content: "\f105";
+      }
+    </style>
+
+    <!-- 속성 선택자 [] -->
+    <a href="#">네이버</a>
+    <a href="#" target="_blank">네이버</a>
+    <a href="#" target="_top">네이버</a>
+    <style>
+      a[target] {
+        color: #ff0000;
+      }
+      a[target="_blank"] {
+        color: green;
+      }
+    </style>
   </body>
 </html>
