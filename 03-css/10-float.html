@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>float : css</title>
+  </head>
+  <body>
+    <h1>css</h1>
+    <h2>float</h2>
+    <div id="wrap">
+      <header class="clearfix">
+        <h1>logo</h1>
+        <nav>nav</nav>
+      </header>
+      <main>
+        <ul class="clearfix">
+          <li>card1</li>
+          <li>card2</li>
+          <li>card3</li>
+          <li>card4</li>
+          <li>card5</li>
+        </ul>
+        <style>
+          * {
+            margin: 0;
+            padding: 0;
+          }
+          ul {
+            overflow: auto;
+            list-style: none;
+          }
+          ul li {
+            float: left;
+            width: calc(20% - 20px);
+            height: 200px;
+            margin-right: 25px;
+            border: 1px solid #000;
+            background-color: green;
+            box-sizing: border-box;
+          }
+
+          ul li:last-child {
+            margin-right: 0;
+          }
+        </style>
+      </main>
+      <footer>footer</footer>
+    </div>
+    <style>
+      .clearfix ::after {
+        content: "";
+        display: block;
+        clear: both;
+      }
+      h1 {
+        float: left;
+        background-color: orange;
+        height: 50px;
+        width: 100%;
+      }
+      nav {
+        float: right;
+      }
+      main {
+        background-color: rgb(193, 255, 127);
+      }
+      footer {
+        background-color: yellow;
+      }
+    </style>
+  </body>
+</html>

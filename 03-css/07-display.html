@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>display : css</title>
+    <style>
+      html,
+      body {
+        font-size: 16px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>css</h1>
+    <h2>display</h2>
+
+    <!-- display -->
+    <div class="block">block</div>
+    <div class="block">block</div>
+    <style>
+      .block {
+        width: 100px;
+        height: 100px;
+        background-color: magenta;
+      }
+    </style>
+    <hr />
+    <span class="inline">inline</span> <span class="inline">inline</span>
+    <style>
+      .inline {
+        display: inline-block;
+        width: 100px;
+        height: 100px;
+        background-color: gray;
+      }
+    </style>
+
+    <hr />
+
+    <!-- box model -->
+    <div class="model">box model</div>
+    <style>
+      .model {
+        width: 1000px;
+        height: 500px;
+        padding: 0 20px;
+        border: 10px solid #000;
+        background-color: yellow;
+        box-sizing: border-box;
+      }
+    </style>
+    <!-- padding -->
+    <div class="padding">padding</div>
+    <style>
+      .padding {
+        background-color: skyblue;
+        padding: 100px 0;
+        text-align: center;
+      }
+    </style>
+
+    <!-- margin -->
+    <div class="margin"></div>
+    <style>
+      .margin {
+        width: 300px;
+        height: 300px;
+        background-color: pink;
+        /* margin-top: 100px;
+        margin-left: 200px;
+        margin-bottom: 300px;  이 내용을 아래에 한줄로 요약함 top부터 시작해서 시계방향으로 나열해서 적음 위, 오, 아래, 왼*/
+        margin: 100px 0 300px 200px;
+      }
+    </style>
+    <!-- width, height -->
+    <div class="box1">block</div>
+    <!-- 블럭요소일 경우 width, heigth : 기본값 : auto-->
+    <!-- width : 100%, heigh : 0  // 암기 필요, 나중에 반응형 만들때 참고-->
+
+    <span class="box2">inline</span>
+    <!--인라인일 경우 width, heigth : 기본값, aouto -->
+    <!-- width : 0, heigth : 0 -->
+    <style>
+      /* mobile */
+      .box1 {
+        max-width: 460px;
+        height: 300px;
+        margin: auto auto auto auto;
+        background-color: orange;
+      }
+
+      /* desktop */
+      /* 최소 600px 이상일 경우 */
+      @media screen and (min-width: 600px) {
+        .box1 {
+          max-width: none;
+          height: auto;
+          background-color: green;
+        }
+      }
+      /* 박스2 가로값만 넣었을때 100% 안채워지는데 블럭으로 만드니까 만들어짐 */
+      .box2 {
+        display: block;
+        background-color: violet;
+        width: 500px;
+        height: 30px;
+      }
+    </style>
+
+    <!-- min wedth -->
+    <button>버튼</button>
+    <style>
+      button {
+        width: 100%;
+        height: 200px;
+        min-width: 200px;
+        background-color: aqua;
+      }
+    </style>
+  </body>
+</html>

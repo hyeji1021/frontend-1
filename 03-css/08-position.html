@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>position : css</title>
+  </head>
+  <body>
+    <h1>css</h1>
+    <h2>position</h2>
+
+    <div class="rel">
+      <div class="sticky"></div>
+    </div>
+    <style>
+      .sticky {
+        position: sticky;
+        top: 100px;
+        left: o;
+        width: 100%;
+        height: 100px;
+        background-color: hotpink;
+      }
+    </style>
+
+    <!-- absolute -->
+    <div class="rel">
+      <div class="abs"></div>
+      <div class="abs2"></div>
+    </div>
+    <header>header</header>
+    <style>
+      header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 1000;
+        width: 100%;
+        height: 100px;
+        background-color: orange;
+      }</style
+    ><br />
+    <style>
+      .rel {
+        position: relative;
+        background-color: green;
+        width: 500px;
+        height: 500px;
+      }
+      .abs {
+        position: absolute;
+        top: 47px;
+        left: 150px;
+        background-color: skyblue;
+        z-index: 4;
+        width: 100px;
+        height: 100px;
+      }
+      .abs2 {
+        position: absolute;
+        top: 0px;
+        left: 150px;
+        background-color: beige;
+        width: 200px;
+        height: 200px;
+      }
+    </style>
+  </body>
+</html>
